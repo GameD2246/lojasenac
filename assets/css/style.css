@@ -1,0 +1,274 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+ul{
+    list-style-type: none;
+    margin: auto;
+    padding: 2px;
+    display: inline;
+}
+body{
+    font-family: "Verdana" , Geneva ,sans-serif;
+    background-color: #e9e9e9;
+    background-position: top center;
+    background-attachment: scroll;
+    background-repeat: repeat-y;
+    font-size: 12px
+}
+.barra-inicial, .lista-redes{
+    background-color: #b9b9b9;
+    
+}
+.lista-esquerda{
+    position: relative;
+    z-index: 2;
+    left: 270px;
+}
+.lista-direita{
+    text-align: right;
+}
+.bor{
+    border-left: 1px solid #A9A9A9;
+    border-right: 1px solid #A9A9A9;
+
+}
+#cabecalho{
+    background-color: #000000;
+    margin: 0;
+}
+.erior {
+    position: relative;
+    z-index: 2;
+    padding-top: 20px; 
+    padding-bottom: 40px;
+}
+.nome-produto{
+    color: #ad0e0e;
+    font-size: 13.5px;
+    margin: 0;
+    padding: 0;
+}
+.bem{
+    font-weight: bold;
+}
+.fundo-principal {
+    background-color: #ad0e0e;
+}
+.logo{
+    text-align: center;
+    position: relative;
+    z-index: 50;
+}
+.cor-principal{
+    color: #A9A9A9;
+}
+.conteudo-topo  {
+    color: #FFF;
+    margin: auto;
+    padding: auto;
+    position: relative;
+}
+.cor-vermelha {
+    color: #ad0e0e;
+}
+.icon{
+    padding: 2px;
+}
+.cor-branca {
+    color: #FFF;
+}
+.font{
+    font: "Verdana" , Geneva ,sans-serif;
+}
+.conteudo-topo{
+    height: 180px;
+    position: relative;
+    z-index: 2;
+}
+.ped{
+    position: relative;
+    z-index: 3;
+    color: #FFF;
+}
+.pesqui{
+    top: 1px;
+    left: 1.9px;
+    height: 45.5px;
+}
+.pesquis{
+    position: relative;
+    z-index: 100;
+    height: 70px;
+}
+.pesquisa{
+    position: relative;
+    z-index: 100;
+    padding-top: 10px;
+}
+.button{
+    position: relative;
+    z-index: 110;
+    left: 2px;
+}
+.search{
+    position: relative;
+    z-index: 1;
+}
+.gly{
+    font-size: 23px;
+    top: 13px;
+}
+.btn-sm{
+    background-color: #ad0e0e;
+}
+
+.carrinho-v{
+    font-size: 13px;
+    color: #FFF;
+    height: 50px;
+}
+.cv{
+    color: #FFF;
+    font-size: 15px;
+    top: 18px;
+}
+h5{
+    color: #FFF;
+}
+.menu-1{
+    width: 100%;
+    height: 47px;
+}
+.menu{
+    width: 755px;
+    margin: auto;
+    background-color: #000000;
+    font-family: "Verdana";
+}
+.menu ul{
+    font: "Verdana" , Geneva ,sans-serif;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: inline;
+    font-weight: bold;
+}
+.menu ul li{
+    float: left;
+    display: block;
+    width: 120px;
+}
+.menu ul li a{
+    color: #FFF;
+    background-color: #000000;
+    text-decoration: none;
+    padding: 15px 20px;
+    display: block;
+    width: 160px;
+}
+.menu li ul{
+    display: none;
+    
+}
+.menu ul li a:hover{
+    background: #152224;
+    color: #FFF;
+}
+.menu li:hover ul{
+    display: block;
+    position: absolute;
+    z-index: 99;
+    
+}
+.menu li:hover li{
+    float: none;
+    font-size: 12px;
+    
+}
+.listagem .titulo-categoria, .listagem.aproveite-tambem,.titulo {
+    border-top: none;
+    border-bottom: 2px solid #cecece;
+    font-size: 20px;
+}
+#rodape .institucional {
+    background-color: #515452;
+    background-position: top center;
+    background-repeat: repeat;
+}
+#rodape .institucional {
+    min-height: 215px;
+}
+.fundo-secundario, .fundo-secundario *, .fundo-secundario *:hover, .fundo-secundario:hover, .fundo-secundario.botao:hover {
+    color: #FFF;
+}
+.produtos img {
+	width: 100%;
+	height: auto;
+}
+.email{
+    width: 100%;
+    background-color: #000000;
+    height: 70px;
+}
+
+.margin{
+    margin-top: 23px;
+}
+.rodape ul{
+    list-style-type:inherit;
+}
+.listagem .info-produto {
+    padding: 15px 5px 10px;
+    position: relative;
+}
+
+.listagem .listagem-item {
+    margin-left: 3%;
+    padding: 0;
+}
+.listagem-item .produto-sobrepor {
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 10;
+    background-color: rgba(255,255,255,0);
+}
+.borda-alpha, .borda-alpha * {
+    border-color: rgba(0,0,0,0.13);
+    margin: 0;
+    padding-top: 5px;
+    padding-left: 0;
+    padding-bottom: 0;
+    padding-right: 0;
+}
+.listagem .preco-produto .preco-venda {
+    color: #ad0e0e;
+}
+.preco-produto strong.titulo {
+    font-size: 16px;
+    white-space: nowrap;
+}
+.titulo {
+    font-family: 'Oswald',Arial,sans-serif;
+    font-weight: 400;
+    text-rendering: inherit;
+}
+strong {
+    font-weight: bold;
+}
+
+.titulo {
+    font-family: 'Raleway' , serif;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.titulo-rodape{
+    padding-bottom: 20px;
+    border-bottom: 1px solid #2E2E2E;
+    font-size: 18px;
+}
