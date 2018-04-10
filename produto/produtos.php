@@ -5,10 +5,14 @@ require_once "../classes/dao/CategoriaDAO.php";
 require_once "../classes/modelo/Produto.php";
 require_once "../classes/dao/ProdutoDAO.php";
 
+include "../upload.php";
+
 $produto = new Produto();
 $produtoDao = new ProdutoDAO();
 
 if (isset($_POST['salvar'])) {
+    
+    $foto = $_FILES['foto'];
     $categoria = new Categoria();
     $categoria->setId($_POST['categoria']);
 
@@ -16,10 +20,14 @@ if (isset($_POST['salvar'])) {
     $produto->setNome($_POST['nome']);
     $produto->setDescricao($_POST['descricao']);
     $produto->setPreco($_POST['preco']);
+    $produto->setFotoProduto("../assets/img/capas_produtos/{$foto['name']}");
     $produto->setCategoria($categoria);
 
     if ($produto->getId() == "") {
-        $produtoDao->inserir($produto);
+        $podeInserir = enviarFoto($foto, "../assets/img/capas_produtos");
+        if($podeInserir){
+            $produtoDao->inserir($produto);
+        }
     } else {
         $produtoDao->editar($produto);
     }
@@ -51,11 +59,15 @@ if (isset($_POST['remover'])) {
                 <div class="col-sm-6">
                     <fieldset>
                         <legend>Dados do Produto</legend>
-                        <form action="produtos.php" method="post">
+                        <form action="produtos.php" method="post" enctype="multipart/form-data">
                             <input type="hidden" name="id" value="<?= $produto->getId() ?>">
                             <div class="form-group">
                                 <label for="nome">Nome</label>
                                 <input type="text" class="form-control" id="nome" name="nome" value="<?= $produto->getNome() ?>" autofocus>
+                            </div>
+                            <div class="form-group">
+                                <label for="foto">Foto do produto</label>
+                                <input type="file" class="form-control" id="foto" name="foto" value="<?= $produto->getFotoProduto() ?>" autofocus>
                             </div>
                             <div class="form-group">
                                 <label for="descricao">Descrição</label>
@@ -94,6 +106,7 @@ if (isset($_POST['remover'])) {
                             <thead>
                                 <tr>
                                     <th>#</th>
+                                    <th>Foto</th>
                                     <th>Produto</th>
                                     <th>Categoria</th>
                                     <th>Preço</th>
@@ -107,6 +120,7 @@ if (isset($_POST['remover'])) {
                                     ?>
                                     <tr>
                                         <td><?= $p->getId() ?></td>
+                                        <td><img src="<?=$p->getFotoProduto()?>" width="60" height="60"></td>
                                         <td><?= $p->getNome() ?></td>
                                         <td><?= $p->getCategoria()->getNome() ?></td>
                                         <td><?= $p->getPreco() ?></td>
