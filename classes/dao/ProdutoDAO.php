@@ -17,7 +17,7 @@ class ProdutoDAO {
                 . "(nome, descricao, preco, categoria_id, foto_produto) value "
                 . "('{$produto->getNome()}', '{$produto->getDescricao()}', "
                 . "{$produto->getPreco()}, {$produto->getCategoria()->getId()},"
-                . "{$produto->getFotoProduto()})";
+                . "'{$produto->getFotoProduto()}')";
         return mysqli_query($this->conexao, $sql);
     }
 
