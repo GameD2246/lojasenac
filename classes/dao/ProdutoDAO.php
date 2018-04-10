@@ -51,7 +51,8 @@ class ProdutoDAO {
         $sql = "update produtos set "
                 . "nome='{$produto->getNome()}', "
                 . "descricao='{$produto->getDescricao()}', "
-                . "preco={$produto->getPreco()}, "
+                . "preco={$produto->getPreco()},"
+                . "foto_produto={$produto->getFotoProduto()}, "
                 . "categoria_id={$produto->getCategoria()->getId()} "
                 . "where id={$produto->getId()}";
         return mysqli_query($this->conexao, $sql);
